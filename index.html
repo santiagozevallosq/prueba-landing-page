@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Rivera | Estudiante de Programación & Software Developer · Lima, Perú</title>
+  <meta name="description" content="Landing page y portafolio personal de Santiago Rivera, estudiante de programación y desarrollo de software Full-Stack en Lima, Perú. Proyectos reales, código limpio y arquitectura moderna.">
+  <meta name="keywords" content="Desarrollador Full Stack Lima, Estudiante de programación Perú, Portafolio Programador, TypeScript, Node.js, Next.js, PostgreSQL">
+  <meta name="author" content="Santiago Rivera">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Santiago Rivera | Software Engineering Student">
+  <meta property="og:description" content="Portafolio personal con proyectos de software, arquitectura moderna y código listo para producción. Lima, Perú.">
+  
+  <!-- Google Fonts: Sora & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0b0f17',
+              surface: '#111827',
+              elevated: '#1a2234',
+              border: '#1f293d',
+              emerald: '#10b981',
+              blue: '#3b82f6',
+              slate: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['Sora', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles & Typographic Scale -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0b0f17] text-slate-100 font-sans selection:bg-emerald-500 selection:text-emerald-950">
+
+  <!-- ==========================================================================
+       Header & Navigation
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 bg-[#0b0f17]/95 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo / Identity -->
+      <a href="#hero" class="flex items-center space-x-2.5 text-slate-100 hover:text-emerald-400 transition-colors group">
+        <span class="w-8 h-8 rounded bg-slate-800 border border-slate-700 flex items-center justify-center font-mono text-sm font-bold text-emerald-400 group-hover:border-emerald-500/50">
+          SR
+        </span>
+        <span class="font-semibold tracking-tight text-slate-100 text-sm sm:text-base">santiago.dev</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#projects" class="hover:text-white transition-colors">Proyectos</a>
+        <a href="#stack" class="hover:text-white transition-colors">Tecnologías</a>
+        <a href="#about" class="hover:text-white transition-colors">Sobre Mí</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Status Indicator & Live Lima Time -->
+      <div class="hidden sm:flex items-center space-x-4">
+        <div class="flex items-center space-x-2 text-xs font-mono text-slate-400 bg-slate-900/90 px-3 py-1.5 rounded-full border border-slate-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-active"></span>
+          <span>Lima, PE</span>
+          <span class="text-slate-600">|</span>
+          <span id="lima-time" class="text-slate-200">17:15:00</span>
+        </div>
+        <a href="#contact" class="inline-flex items-center justify-center px-3.5 py-1.5 rounded text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-colors">
+          Disponible
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden">
+        <button id="mobile-menu-btn" type="button" class="p-2 rounded text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Abrir menú de navegación">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-[#0e1420] px-4 pt-3 pb-5 space-y-2.5">
+      <a href="#projects" class="block px-3 py-2 rounded text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Proyectos</a>
+      <a href="#stack" class="block px-3 py-2 rounded text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Tecnologías</a>
+      <a href="#about" class="block px-3 py-2 rounded text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Sobre Mí</a>
+      <a href="#contact" class="block px-3 py-2 rounded text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Contacto</a>
+      <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+        <span>Lima, PE (UTC-5)</span>
+        <span class="text-emerald-400">● Disponible para prácticas</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero Section: Asymmetrical Editorial & Interactive Code Window
+         ========================================================================== -->
+    <section id="hero" class="relative pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-slate-800/80 bg-[#0b0f17]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Column 1: Editorial Introduction -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>Estudiante de Ingeniería de Software · Lima, Perú</span>
+            </div>
+
+            <h1 class="text-white">
+              Construyendo software con foco en arquitectura, rendimiento y código limpio.
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed text-measure">
+              Hola, soy Santiago Rivera. Me apasiona resolver problemas complejos mediante sistemas backend escalables, APIs robustas y aplicaciones web modernas y accesibles.
+            </p>
+
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 rounded font-medium text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all font-semibold shadow-lg shadow-emerald-500/10">
+                Ver Proyectos Destacados
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+
+              <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded font-medium text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors">
+                Contactar Directamente
+              </a>
+
+              <div class="flex items-center space-x-3 pl-2">
+                <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-colors" title="GitHub">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-colors" title="LinkedIn">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Fast Stats / Engineering highlights -->
+            <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80">
+              <div>
+                <p class="text-2xl font-bold font-mono text-white">4+</p>
+                <p class="text-xs text-slate-400 mt-0.5">Proyectos Full-Stack</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-mono text-emerald-400">100%</p>
+                <p class="text-xs text-slate-400 mt-0.5">TypeScript & SQL</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-mono text-blue-400">UTC-5</p>
+                <p class="text-xs text-slate-400 mt-0.5">Zona Horaria Lima</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Interactive Terminal Window -->
+          <div class="lg:col-span-5">
+            <div class="terminal-window rounded-xl">
+              <div class="terminal-inner-frame">
+                
+                <!-- Window Header with Tabs -->
+                <div class="bg-[#121824] px-4 py-2.5 border-b border-slate-800 flex items-center justify-between">
+                  <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                    <span id="terminal-filename" class="text-xs font-mono text-slate-400 ml-2">order-service.ts</span>
+                  </div>
+                  <span class="text-xs font-mono text-slate-500">production ready</span>
+                </div>
+
+                <!-- Interactive Tab Bar -->
+                <div class="flex border-b border-slate-800/80 bg-[#0c101a] text-xs font-mono overflow-x-auto">
+                  <button type="button" class="terminal-tab-btn px-4 py-2 text-white bg-slate-800 border-b-2 border-emerald-400 transition-colors focus:outline-none" data-tab="controller">
+                    order-service.ts
+                  </button>
+                  <button type="button" class="terminal-tab-btn px-4 py-2 text-slate-400 hover:text-white transition-colors focus:outline-none" data-tab="schema">
+                    schema.sql
+                  </button>
+                  <button type="button" class="terminal-tab-btn px-4 py-2 text-slate-400 hover:text-white transition-colors focus:outline-none" data-tab="docker">
+                    docker-compose.yml
+                  </button>
+                </div>
+
+                <!-- Code View Container -->
+                <div class="p-4 bg-[#070b12] overflow-x-auto text-xs font-mono leading-relaxed max-h-[360px]">
+                  <pre id="terminal-code-body" class="text-slate-300"><code><span class="text-blue-400">import</span> { Injectable, Logger } <span class="text-blue-400">from</span> <span class="text-emerald-300">'@nestjs/common'</span>;
+<span class="text-blue-400">import</span> { PrismaService } <span class="text-blue-400">from</span> <span class="text-emerald-300">'../prisma.service'</span>;
+<span class="text-blue-400">import</span> { RedisCache } <span class="text-blue-400">from</span> <span class="text-emerald-300">'../cache.service'</span>;
+
+@Injectable()
+<span class="text-blue-400">export class</span> <span class="text-amber-300">OrderProcessingService</span> {
+  <span class="text-blue-400">private readonly</span> logger = <span class="text-blue-400">new</span> Logger(<span class="text-amber-300">OrderProcessingService</span>.name);
+
+  <span class="text-blue-400">constructor</span>(
+    <span class="text-blue-400">private</span> db: PrismaService,
+    <span class="text-blue-400">private</span> cache: RedisCache,
+  ) {}
+
+  <span class="text-blue-400">async</span> <span class="text-amber-300">processCheckout</span>(orderId: <span class="text-purple-300">string</span>, userId: <span class="text-purple-300">string</span>) {
+    <span class="text-slate-500">// Idempotency check with Redis (TTL: 10m)</span>
+    <span class="text-blue-400">const</span> lockKey = <span class="text-emerald-300">`order:lock:${orderId}`</span>;
+    <span class="text-blue-400">const</span> acquired = <span class="text-blue-400">await</span> <span class="text-blue-400">this</span>.cache.setNx(lockKey, <span class="text-emerald-300">'LOCKED'</span>, 600);
+    <span class="text-blue-400">if</span> (!acquired) <span class="text-blue-400">throw new</span> Error(<span class="text-emerald-300">'Pedido ya en procesamiento.'</span>);
+
+    <span class="text-slate-500">// Atomic transaction with inventory decrement</span>
+    <span class="text-blue-400">return await</span> <span class="text-blue-400">this</span>.db.$transaction(<span class="text-blue-400">async</span> (tx) => {
+      <span class="text-blue-400">const</span> order = <span class="text-blue-400">await</span> tx.orders.update({
+        where: { id: orderId, status: <span class="text-emerald-300">'PENDING'</span> },
+        data: { status: <span class="text-emerald-300">'PAID'</span>, confirmedAt: <span class="text-blue-400">new</span> Date() },
+      });
+      <span class="text-blue-400">this</span>.logger.log(<span class="text-emerald-300">`Orden ${orderId} confirmada con éxito.`</span>);
+      <span class="text-blue-400">return</span> { success: <span class="text-purple-300">true</span>, order };
+    });
+  }
+}</code></pre>
+                </div>
+
+                <!-- Terminal Footer Status -->
+                <div class="px-4 py-2 bg-[#0c101a] border-t border-slate-800 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                  <span class="flex items-center text-emerald-400">
+                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2"></span>
+                    build: passing (jest: 18 passed)
+                  </span>
+                  <span>coverage: 94.2%</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Featured Projects Section (Architectural Focus)
+         ========================================================================== -->
+    <section id="projects" class="py-20 border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-14">
+          <h2 class="text-white">
+            Proyectos Destacados
+          </h2>
+          <p class="mt-3 text-slate-400 text-base max-w-2xl">
+            Aplicaciones construidas con enfoque en problemas reales, patrones de diseño de software y calidad de código demostrable.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Project 1: IntiMarket -->
+          <article class="interactive-panel rounded-lg bg-slate-900/60 border border-slate-800 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span class="text-emerald-400 font-semibold">E-Commerce & Pagos</span>
+                <span>Full-Stack</span>
+              </div>
+              <h3 class="text-white mb-2">IntiMarket Platform</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Plataforma de comercio electrónico diseñada para microempresas peruanas con integración de pagos (Culqi/Stripe), control de inventario en tiempo real con transacciones atómicas y caché Redis.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">TypeScript</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Next.js 14</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Prisma</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Redis</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <button type="button" class="open-project-modal text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center transition-colors focus:outline-none" data-project="intiramarket">
+                Ver arquitectura & métricas
+                <svg class="ml-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <div class="flex space-x-3 text-xs text-slate-400">
+                <a href="https://github.com/tu-usuario/intiramarket-ecommerce" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Código GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: LimaTransit API -->
+          <article class="interactive-panel rounded-lg bg-slate-900/60 border border-slate-800 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span class="text-blue-400 font-semibold">Microservicio & Algoritmos</span>
+                <span>Backend</span>
+              </div>
+              <h3 class="text-white mb-2">LimaTransit Core API</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                API REST de alto rendimiento para el cálculo de rutas óptimas en el sistema de transporte metropolitano de Lima. Procesamiento geoespacial con PostGIS y algoritmo Dijkstra optimizado.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Go (Golang)</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">PostGIS</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Redis</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Docker</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Swagger</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <button type="button" class="open-project-modal text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center transition-colors focus:outline-none" data-project="limatransit">
+                Ver arquitectura & métricas
+                <svg class="ml-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <div class="flex space-x-3 text-xs text-slate-400">
+                <a href="https://github.com/tu-usuario/limatransit-core-api" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Código GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: DevPulse CLI -->
+          <article class="interactive-panel rounded-lg bg-slate-900/60 border border-slate-800 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span class="text-purple-400 font-semibold">DevTools & CLI</span>
+                <span>Open Source</span>
+              </div>
+              <h3 class="text-white mb-2">DevPulse CLI Tool</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Herramienta de terminal para desarrolladores que audita la frecuencia de commits, detecta cuellos de botella en ramas Git y genera informes de deuda técnica con exportación JSON/HTML.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">TypeScript</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Node.js</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">GitHub GraphQL</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Jest</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <button type="button" class="open-project-modal text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center transition-colors focus:outline-none" data-project="devpulse">
+                Ver arquitectura & métricas
+                <svg class="ml-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <div class="flex space-x-3 text-xs text-slate-400">
+                <a href="https://github.com/tu-usuario/devpulse-git-cli" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Código GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: FinTrack PE -->
+          <article class="interactive-panel rounded-lg bg-slate-900/60 border border-slate-800 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span class="text-amber-400 font-semibold">Fintech & Dashboard</span>
+                <span>Frontend & API</span>
+              </div>
+              <h3 class="text-white mb-2">FinTrack PE Dashboard</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Aplicación web progresiva de finanzas personales con sincronización automática del tipo de cambio oficial de SUNAT (PEN a USD), categorización de gastos y visualización modular ligera.
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Vanilla JS / Modules</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">Python FastAPI</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60">SQLite</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <button type="button" class="open-project-modal text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center transition-colors focus:outline-none" data-project="fintrack">
+                Ver arquitectura & métricas
+                <svg class="ml-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <div class="flex space-x-3 text-xs text-slate-400">
+                <a href="https://github.com/tu-usuario/fintrack-peru" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Código GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Tech Stack & Engineering Competencies
+         ========================================================================== -->
+    <section id="stack" class="py-20 border-b border-slate-800/80 bg-[#0e131d]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-14">
+          <h2 class="text-white">
+            Stack Tecnológico & Fundamentos
+          </h2>
+          <p class="mt-3 text-slate-400 text-base max-w-2xl">
+            Herramientas y lenguajes que utilizo activamente para construir soluciones duraderas y mantenibles.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Backend & APIs -->
+          <div class="p-6 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="w-10 h-10 rounded bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-mono font-bold mb-4">
+              &lt;/&gt;
+            </div>
+            <h3 class="text-white mb-2">Backend & APIs</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              Desarrollo de servicios modulares, validaciones estrictas y arquitectura orientada a dominios.
+            </p>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Node.js & Express</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> TypeScript estricto</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Go / FastAPI (Python)</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> RESTful & GraphQL</li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Frontend & UX -->
+          <div class="p-6 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="w-10 h-10 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold mb-4">
+              UI
+            </div>
+            <h3 class="text-white mb-2">Frontend & Web</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              Interfaces rápidas, semántica accesible (WCAG AA), responsive design y renderizado optimizado.
+            </p>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> HTML5 semántico</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Tailwind CSS</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> React & Next.js</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> JavaScript Moderno (ES6+)</li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Databases & Storage -->
+          <div class="p-6 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="w-10 h-10 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold mb-4">
+              DB
+            </div>
+            <h3 class="text-white mb-2">Datos & Persistencia</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              Modelado relacional, normalización, índices para alta concurrencia y capas de caché.
+            </p>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> PostgreSQL & Prisma</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> MySQL / MariaDB</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Redis (Caché & locks)</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Migraciones & SQL puro</li>
+            </ul>
+          </div>
+
+          <!-- Category 4: DevOps & Practices -->
+          <div class="p-6 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="w-10 h-10 rounded bg-purple-500/10 border border-purple-400 flex items-center justify-center font-mono font-bold mb-4">
+              OPS
+            </div>
+            <h3 class="text-white mb-2">DevOps & Prácticas</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              Contenerización reproducible, flujos de integración continua y disciplina de pruebas.
+            </p>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Git & GitHub Flow</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Docker & Docker Compose</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> GitHub Actions (CI/CD)</li>
+              <li class="flex items-center"><span class="text-emerald-400 mr-2">▪</span> Jest & Unit Testing</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         About Me & Academic Background
+         ========================================================================== -->
+    <section id="about" class="py-20 border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <h2 class="text-white">
+              Sobre Mí & Enfoque
+            </h2>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Soy estudiante de Ingeniería de Sistemas / Software en Lima, Perú. Combino la formación universitaria rigurosa en matemáticas, estructuras de datos y algoritmos con un aprendizaje continuo y práctico construyendo aplicaciones reales.
+            </p>
+            <p class="text-slate-400 leading-relaxed text-sm">
+              Mi objetivo es integrarme como desarrollador Junior o Trainee en un equipo de ingeniería donde pueda aportar valor inmediato escribiendo código testeado, resolviendo problemas de negocio y aprendiendo de desarrolladores senior.
+            </p>
+
+            <div class="p-5 rounded bg-slate-900 border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Ubicación</span>
+                <span class="font-medium text-white">Lima, Perú (Disponible presencial o remoto)</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Idioma nativo</span>
+                <span class="font-medium text-white">Español</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Inglés</span>
+                <span class="font-medium text-white">B2 (Lectura técnica y comunicación escrita)</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Intereses</span>
+                <span class="font-medium text-emerald-400">Sistemas distribuidos, Cloud & UI Accesible</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-4">
+            
+            <h3 class="text-white mb-4">Principios de Trabajo</h3>
+
+            <div class="p-5 rounded-lg bg-slate-900/60 border border-slate-800">
+              <h4 class="text-white mb-1">1. Código legible antes que astuto</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Escribo código pensando en la persona que lo mantendrá en 6 meses. Nombres explícitos, funciones de responsabilidad única y tipado estricto.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-lg bg-slate-900/60 border border-slate-800">
+              <h4 class="text-white mb-1">2. Pruebas como red de seguridad</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Las suites de pruebas automatizadas garantizan que refactorizar sea seguro y que la lógica crítica de negocio no falle ante casos borde.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-lg bg-slate-900/60 border border-slate-800">
+              <h4 class="text-white mb-1">3. Respeto por los recursos y la red</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                En Latinoamérica la conectividad móvil varía: optimizar el tamaño de los bundles, comprimir assets y minimizar llamadas a la red no es un lujo, es accesibilidad.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-lg bg-slate-900/60 border border-slate-800">
+              <h4 class="text-white mb-1">4. Colaboración y Git disciplinado</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Commits semánticos y atómicos, ramas descriptivas y pull requests documentados para facilitar la revisión de código en equipo.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Contact & Direct Reach Out
+         ========================================================================== -->
+    <section id="contact" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-white">
+            Iniciemos una Conversación
+          </h2>
+          <p class="mt-3 text-slate-400 text-base">
+            ¿Tienes una vacante de prácticas, un proyecto freelance o te gustaría conversar sobre ingeniería de software? Escríbeme y responderé en menos de 24 horas.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+          
+          <!-- Direct Links Column -->
+          <div class="md:col-span-5 space-y-4">
+            
+            <div class="p-5 rounded-lg bg-slate-900 border border-slate-800">
+              <span class="text-xs text-slate-400 block mb-1">Correo Electrónico</span>
+              <p id="user-email-text" class="text-sm font-mono text-slate-200 select-all font-medium">santiago.rivera.dev@gmail.com</p>
+              <div class="mt-3 flex items-center space-x-2">
+                <button id="copy-email-btn" type="button" class="text-xs px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium transition-colors border border-slate-700">
+                  Copiar Correo
+                </button>
+                <span id="copy-status" class="hidden text-xs text-emerald-400 font-medium">¡Copiado!</span>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-lg bg-slate-900 border border-slate-800 space-y-3">
+              <span class="text-xs text-slate-400 block">Redes & Canales</span>
+              
+              <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between text-sm text-slate-300 hover:text-white transition-colors group">
+                <span class="flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span>
+                  LinkedIn Profesional
+                </span>
+                <span class="text-xs text-slate-500 group-hover:text-slate-300">↗</span>
+              </a>
+
+              <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between text-sm text-slate-300 hover:text-white transition-colors group">
+                <span class="flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
+                  Repositorios en GitHub
+                </span>
+                <span class="text-xs text-slate-500 group-hover:text-slate-300">↗</span>
+              </a>
+
+              <a href="https://wa.me/51999999999?text=Hola%20Santiago,%20vi%20tu%20landing%20page%20y%20me%20gustar%C3%ADa%20conversar." target="_blank" rel="noopener noreferrer" class="flex items-center justify-between text-sm text-slate-300 hover:text-white transition-colors group">
+                <span class="flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                  WhatsApp Directo (+51)
+                </span>
+                <span class="text-xs text-slate-500 group-hover:text-slate-300">↗</span>
+              </a>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-900/40 border border-slate-800 text-xs text-slate-400">
+              <p>📍 Residente en Lima, Perú (Horario UTC-5). Disponible para modalidad remota, híbrida o presencial.</p>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="md:col-span-7">
+            <form id="contact-form" class="p-6 rounded-lg bg-slate-900 border border-slate-800 space-y-4">
+              
+              <div>
+                <label for="form-name" class="block text-xs font-medium text-slate-300 mb-1.5">Tu Nombre o Empresa</label>
+                <input type="text" id="form-name" required placeholder="Ej: Carlos Silva (Tech Lead)" class="w-full px-3.5 py-2.5 rounded bg-slate-950 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors">
+              </div>
+
+              <div>
+                <label for="form-email" class="block text-xs font-medium text-slate-300 mb-1.5">Tu Correo de Contacto</label>
+                <input type="email" id="form-email" required placeholder="carlos@empresa.com" class="w-full px-3.5 py-2.5 rounded bg-slate-950 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors">
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-xs font-medium text-slate-300 mb-1.5">Mensaje o Propuesta</label>
+                <textarea id="form-message" rows="4" required placeholder="Cuéntame sobre la vacante, proyecto o duda técnica..." class="w-full px-3.5 py-2.5 rounded bg-slate-950 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="w-full py-3 px-4 rounded font-medium text-sm bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-colors flex items-center justify-center">
+                Enviar Mensaje
+              </button>
+
+              <p class="text-[11px] text-slate-500 text-center">
+                * Simulación interactiva lista para conectar a Formspree, EmailJS o tu backend.
+              </p>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="border-t border-slate-800/80 bg-[#080c14] py-10 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <p>© 2026 Santiago Rivera. Código abierto bajo licencia MIT.</p>
+      </div>
+
+      <p class="text-slate-500">
+        Diseñado con HTML5 semántico, Tailwind CSS y Vanilla JS. Alojado en GitHub Pages.
+      </p>
+
+      <div class="flex items-center space-x-4">
+        <a href="#hero" class="hover:text-white transition-colors">Volver arriba ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Project Details Modal (Architecture & Metrics Explorer)
+       ========================================================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-backdrop" class="modal-backdrop fixed inset-0"></div>
+
+    <div class="relative bg-slate-900 border border-slate-700 rounded-lg max-w-2xl w-full p-6 sm:p-8 overflow-y-auto max-h-[90vh] shadow-2xl z-10 space-y-6">
+      
+      <div class="flex items-start justify-between border-b border-slate-800 pb-4">
+        <div>
+          <h3 id="modal-title" class="text-white">Detalles del Proyecto</h3>
+          <p id="modal-tagline" class="text-xs text-emerald-400 font-mono mt-1"></p>
+        </div>
+        <button id="modal-close-btn" type="button" class="text-slate-400 hover:text-white p-1 rounded focus:outline-none" aria-label="Cerrar modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Arquitectura & Diseño</h4>
+        <p id="modal-architecture" class="text-sm text-slate-300 leading-relaxed"></p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Retos Técnicos Superados</h4>
+        <p id="modal-challenges" class="text-sm text-slate-300 leading-relaxed"></p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Métricas Clave</h4>
+        <ul id="modal-metrics" class="space-y-1.5"></ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Tecnologías Utilizadas</h4>
+        <div id="modal-stack" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-end space-x-3">
+        <a id="modal-repo-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 transition-colors">
+          Ver Código en GitHub
+        </a>
+        <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-xs font-semibold text-slate-950 transition-colors">
+          Ver Demo / Documentación
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 flex items-center space-x-3 bg-emerald-950/90 border border-emerald-500/50 text-emerald-200 px-4 py-3 rounded-lg shadow-xl" role="alert">
+    <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>
+    <div class="text-xs">
+      <p class="font-semibold text-emerald-300">¡Mensaje registrado!</p>
+      <p class="text-emerald-400/90">Gracias por escribir. Te responderé a la brevedad.</p>
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
